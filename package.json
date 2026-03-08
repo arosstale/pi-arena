@@ -1,0 +1,10 @@
+{
+  "name": "@artale/pi-arena",
+  "version": "1.1.0",
+  "description": "Model benchmarking with domain-aware hallucination tracking, per-model leaderboards, and task templates. Track speed, quality, and pass rate across coding, reasoning, and general knowledge.",
+  "keywords": ["pi-package", "pi-extension", "benchmark", "arena", "evaluation", "hallucination", "model-comparison"],
+  "license": "MIT",
+  "author": "artale",
+  "repository": { "type": "git", "url": "https://github.com/arosstale/pi-arena.git" },
+  "extensions": ["extensions/pi-arena.ts"]
+}
