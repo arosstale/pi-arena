@@ -1,6 +1,6 @@
 {
   "name": "@artale/pi-arena",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Model benchmarking with domain-aware hallucination tracking, per-model leaderboards, and task templates. Track speed, quality, and pass rate across coding, reasoning, and general knowledge.",
   "keywords": [
     "pi-package",
