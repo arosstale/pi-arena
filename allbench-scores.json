@@ -1,0 +1,1458 @@
+{
+  "Gemini 3.1 Pro": {
+    "scores": {
+      "knowledge": 85.5,
+      "expert_reasoning": 95.7,
+      "abstract_reasoning": 60.8,
+      "metacognition": 59.5,
+      "execution": 71.6
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "arcAgi2": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "Google",
+    "_priceIn": 2,
+    "_priceOut": 12,
+    "_group": "flagship",
+    "_elo": 1501,
+    "composite": 74.6,
+    "coverage": 100,
+    "_raw": {
+      "mmluPro": 83,
+      "gpqa": 94.3,
+      "aime": 97,
+      "hle": 44.4,
+      "arcAgi2": 77.1,
+      "metacog": 59.5,
+      "sweV": 80.6,
+      "swePro": 43.3,
+      "ifeval": 91,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 88
+    }
+  },
+  "GPT-5.2": {
+    "scores": {
+      "knowledge": 81,
+      "expert_reasoning": 96.6,
+      "abstract_reasoning": 44.2,
+      "metacognition": 62.8,
+      "execution": 83.5
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "arcAgi2": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "ifeval": "single-source",
+      "lcb": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "OpenAI",
+    "_priceIn": 1.75,
+    "_priceOut": 14,
+    "_group": "flagship",
+    "_elo": 1510,
+    "composite": 73.6,
+    "coverage": 100,
+    "_raw": {
+      "mmluPro": 80,
+      "gpqa": 93.2,
+      "aime": 100,
+      "hle": 35.4,
+      "arcAgi2": 52.9,
+      "metacog": 62.76,
+      "sweV": 80,
+      "swePro": null,
+      "ifeval": 90.5,
+      "lcb": 80,
+      "bfcl": null,
+      "mmmlu": 82
+    }
+  },
+  "Claude Opus 4.6": {
+    "scores": {
+      "knowledge": 79.3,
+      "expert_reasoning": 95.7,
+      "abstract_reasoning": 54.4,
+      "metacognition": 56,
+      "execution": 73.7
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "arcAgi2": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "lcb": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "Anthropic",
+    "_priceIn": 5,
+    "_priceOut": 25,
+    "_group": "flagship",
+    "_elo": 1498,
+    "composite": 71.8,
+    "coverage": 100,
+    "_raw": {
+      "mmluPro": 78.5,
+      "gpqa": 91.3,
+      "aime": 100,
+      "hle": 40,
+      "arcAgi2": 68.8,
+      "metacog": 56.04,
+      "sweV": 80.8,
+      "swePro": 45,
+      "ifeval": 93.1,
+      "lcb": 76,
+      "bfcl": null,
+      "mmmlu": 80
+    }
+  },
+  "Kimi K2.5": {
+    "scores": {
+      "knowledge": 86.5,
+      "expert_reasoning": 91.9,
+      "abstract_reasoning": 28.5,
+      "metacognition": 68.7,
+      "execution": 70.9
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "arcAgi2": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "lcb": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Moonshot",
+    "_priceIn": 0.55,
+    "_priceOut": 2.5,
+    "_group": "flagship",
+    "_elo": 1447,
+    "composite": 69.3,
+    "coverage": 100,
+    "_raw": {
+      "mmluPro": 92,
+      "gpqa": 87.6,
+      "aime": 96.1,
+      "hle": 44.9,
+      "arcAgi2": 12.1,
+      "metacog": 68.71,
+      "sweV": 76.8,
+      "swePro": 27.7,
+      "ifeval": 94,
+      "lcb": 85,
+      "bfcl": null,
+      "mmmlu": 81
+    }
+  },
+  "DeepSeek R2": {
+    "scores": {
+      "knowledge": 81.5,
+      "expert_reasoning": 90.9,
+      "execution": 84
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "mmluPro": "single-source",
+      "ifeval": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "DeepSeek",
+    "_priceIn": 0.55,
+    "_priceOut": 2.19,
+    "_group": "value",
+    "_elo": 1450,
+    "composite": 66.2,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": 87,
+      "gpqa": 88,
+      "aime": 93.8,
+      "hle": null,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": null,
+      "swePro": null,
+      "ifeval": 84,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 76
+    }
+  },
+  "MiniMax-M2.5": {
+    "scores": {
+      "knowledge": 82,
+      "expert_reasoning": 85.6,
+      "abstract_reasoning": 19.1,
+      "metacognition": 60.5,
+      "execution": 83.4
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "ifeval": "single-source",
+      "lcb": "single-source"
+    },
+    "_type": "open",
+    "_provider": "MiniMax",
+    "_priceIn": 0.3,
+    "_priceOut": 1.2,
+    "_group": "flagship",
+    "_elo": null,
+    "composite": 66.1,
+    "coverage": 100,
+    "_raw": {
+      "mmluPro": 82,
+      "gpqa": 84.8,
+      "aime": 86.3,
+      "hle": 19.1,
+      "arcAgi2": null,
+      "metacog": 60.54,
+      "sweV": 80.2,
+      "swePro": null,
+      "ifeval": 87.5,
+      "lcb": 82.6,
+      "bfcl": null,
+      "mmmlu": null
+    }
+  },
+  "GLM-5": {
+    "scores": {
+      "knowledge": 81.5,
+      "expert_reasoning": 89.4,
+      "abstract_reasoning": 30.5,
+      "metacognition": 62.5,
+      "execution": 64.9
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "lcb": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Zhipu AI",
+    "_priceIn": 0.35,
+    "_priceOut": 0.39,
+    "_group": "value",
+    "_elo": 1451,
+    "composite": 65.8,
+    "coverage": 100,
+    "_raw": {
+      "mmluPro": 87,
+      "gpqa": 86,
+      "aime": 92.7,
+      "hle": 30.5,
+      "arcAgi2": null,
+      "metacog": 62.5,
+      "sweV": null,
+      "swePro": 77.8,
+      "ifeval": null,
+      "lcb": 52,
+      "bfcl": null,
+      "mmmlu": 76
+    }
+  },
+  "Gemini 3 Flash": {
+    "scores": {
+      "knowledge": 85.8,
+      "expert_reasoning": 92.7,
+      "abstract_reasoning": 33.9,
+      "execution": 77.3
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "arcAgi2": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "Google",
+    "_priceIn": 0.5,
+    "_priceOut": 3,
+    "_group": "flagship",
+    "_elo": 1490,
+    "composite": 64.8,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": 88.6,
+      "gpqa": 90.4,
+      "aime": 95,
+      "hle": 33.7,
+      "arcAgi2": 34,
+      "metacog": null,
+      "sweV": 72.5,
+      "swePro": 71.2,
+      "ifeval": 88.2,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 83
+    }
+  },
+  "Gemini 3 Pro": {
+    "scores": {
+      "knowledge": 85,
+      "expert_reasoning": 93.5,
+      "abstract_reasoning": 34.3,
+      "execution": 76.2
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "arcAgi2": "cross-verified",
+      "sweV": "cross-verified",
+      "mmmlu": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "Google",
+    "_priceIn": 2,
+    "_priceOut": 12,
+    "_group": "flagship",
+    "_elo": 1490,
+    "composite": 64.6,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 91.9,
+      "aime": 95,
+      "hle": 37.5,
+      "arcAgi2": 31.1,
+      "metacog": null,
+      "sweV": 76.2,
+      "swePro": null,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 85
+    }
+  },
+  "Qwen3.5-397B": {
+    "scores": {
+      "knowledge": 86.4,
+      "expert_reasoning": 89.9,
+      "abstract_reasoning": 32,
+      "execution": 69
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Alibaba",
+    "_priceIn": null,
+    "_priceOut": null,
+    "_group": "qwen",
+    "_elo": 1445,
+    "composite": 62,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": 87.8,
+      "gpqa": 88.4,
+      "aime": 91.3,
+      "hle": 32,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 76.4,
+      "swePro": 38,
+      "ifeval": 92.6,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 85
+    }
+  },
+  "Qwen3-Next-80B": {
+    "scores": {
+      "knowledge": 82,
+      "expert_reasoning": 77.2,
+      "execution": 78.8
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "mmluPro": "single-source",
+      "ifeval": "single-source",
+      "lcb": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Alibaba",
+    "_priceIn": 0.15,
+    "_priceOut": 1.2,
+    "_group": "qwen",
+    "_elo": null,
+    "composite": 61.5,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": 82.7,
+      "gpqa": 77.2,
+      "aime": null,
+      "hle": null,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": null,
+      "swePro": null,
+      "ifeval": 88.9,
+      "lcb": 68.7,
+      "bfcl": 49.7,
+      "mmmlu": 81.3
+    }
+  },
+  "GPT-5.3 Codex": {
+    "scores": {
+      "knowledge": 83,
+      "expert_reasoning": 93.3,
+      "abstract_reasoning": 36,
+      "execution": 57
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "OpenAI",
+    "_priceIn": 7.5,
+    "_priceOut": 30,
+    "_group": "flagship",
+    "_elo": 1500,
+    "composite": 60.2,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": 82.9,
+      "gpqa": 91.5,
+      "aime": 95,
+      "hle": 36,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": null,
+      "swePro": 57,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 83
+    }
+  },
+  "DeepSeek V3.2": {
+    "scores": {
+      "knowledge": 78,
+      "expert_reasoning": 84.6,
+      "abstract_reasoning": 22,
+      "metacognition": 60,
+      "execution": 56.4
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "sweV": "cross-verified",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "DeepSeek",
+    "_priceIn": 0.14,
+    "_priceOut": 0.28,
+    "_group": "value",
+    "_elo": 1430,
+    "composite": 60.2,
+    "coverage": 100,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 79.9,
+      "aime": 89.3,
+      "hle": 22,
+      "arcAgi2": null,
+      "metacog": 60.04,
+      "sweV": 66,
+      "swePro": 15.6,
+      "ifeval": 87.5,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 78
+    }
+  },
+  "Claude Sonnet 4.6": {
+    "scores": {
+      "expert_reasoning": 86.5,
+      "abstract_reasoning": 60.4,
+      "execution": 84.6
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "arcAgi2": "cross-verified",
+      "sweV": "cross-verified",
+      "ifeval": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "Anthropic",
+    "_priceIn": 3,
+    "_priceOut": 15,
+    "_group": "flagship",
+    "_elo": 1482,
+    "composite": 59.8,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 89.9,
+      "aime": 83,
+      "hle": null,
+      "arcAgi2": 60.4,
+      "metacog": null,
+      "sweV": 79.6,
+      "swePro": null,
+      "ifeval": 89.5,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": null
+    }
+  },
+  "Grok 4 Heavy": {
+    "scores": {
+      "knowledge": 80.5,
+      "expert_reasoning": 91.3,
+      "abstract_reasoning": 28,
+      "execution": 61.7
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "xAI",
+    "_priceIn": 3,
+    "_priceOut": 15,
+    "_group": "flagship",
+    "_elo": 1460,
+    "composite": 58.5,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": 85,
+      "gpqa": 87.5,
+      "aime": 95,
+      "hle": 28,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 72,
+      "swePro": 25,
+      "ifeval": 88,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 76
+    }
+  },
+  "Qwen3.5-4B": {
+    "scores": {
+      "knowledge": 77.6,
+      "expert_reasoning": 76.2,
+      "execution": 72.8
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "mmluPro": "single-source",
+      "ifeval": "single-source",
+      "lcb": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Alibaba",
+    "_priceIn": null,
+    "_priceOut": null,
+    "_group": "qwen",
+    "_elo": null,
+    "composite": 58.5,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": 79.1,
+      "gpqa": 76.2,
+      "aime": null,
+      "hle": null,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": null,
+      "swePro": null,
+      "ifeval": 89.8,
+      "lcb": 55.8,
+      "bfcl": 50.3,
+      "mmmlu": 76.1
+    }
+  },
+  "Solar Open 100B": {
+    "scores": {
+      "knowledge": 74.2,
+      "expert_reasoning": 76.2,
+      "execution": 74.2
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Upstage",
+    "_priceIn": 0,
+    "_priceOut": 0,
+    "_group": "korean",
+    "_elo": null,
+    "composite": 58,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": 80.4,
+      "gpqa": 68.1,
+      "aime": 84.3,
+      "hle": null,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": null,
+      "swePro": 74.2,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 68
+    }
+  },
+  "Qwen3.5-122B": {
+    "scores": {
+      "knowledge": 82,
+      "expert_reasoning": 86.3,
+      "abstract_reasoning": 24,
+      "execution": 64.5
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "sweV": "cross-verified",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Alibaba",
+    "_priceIn": 0.4,
+    "_priceOut": 1.2,
+    "_group": "qwen",
+    "_elo": 1420,
+    "composite": 57.4,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 87.6,
+      "aime": 85,
+      "hle": 24,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 72.2,
+      "swePro": 28,
+      "ifeval": 93.4,
+      "lcb": null,
+      "bfcl": 72.2,
+      "mmmlu": 82
+    }
+  },
+  "Qwen3.5-9B": {
+    "scores": {
+      "knowledge": 81.9,
+      "expert_reasoning": 81.7,
+      "abstract_reasoning": 10,
+      "execution": 78.6
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "hle": "cross-verified",
+      "mmluPro": "single-source",
+      "ifeval": "single-source",
+      "lcb": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Alibaba",
+    "_priceIn": null,
+    "_priceOut": null,
+    "_group": "qwen",
+    "_elo": 1300,
+    "composite": 56.4,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": 82.5,
+      "gpqa": 81.7,
+      "aime": null,
+      "hle": 10,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": null,
+      "swePro": null,
+      "ifeval": 91.5,
+      "lcb": 65.6,
+      "bfcl": 66.1,
+      "mmmlu": 81.2
+    }
+  },
+  "Step-3.5-Flash": {
+    "scores": {
+      "expert_reasoning": 97.3,
+      "execution": 80.4
+    },
+    "confidence": {
+      "aime": "cross-verified",
+      "sweV": "cross-verified",
+      "lcb": "single-source"
+    },
+    "_type": "open",
+    "_provider": "StepFun",
+    "_priceIn": null,
+    "_priceOut": null,
+    "_group": "flagship",
+    "_elo": null,
+    "composite": 56.2,
+    "coverage": 40,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": null,
+      "aime": 97.3,
+      "hle": null,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 74.4,
+      "swePro": null,
+      "ifeval": null,
+      "lcb": 86.4,
+      "bfcl": null,
+      "mmmlu": null
+    }
+  },
+  "Phi-4": {
+    "scores": {
+      "knowledge": 68,
+      "expert_reasoning": 73,
+      "execution": 72
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "sweV": "cross-verified",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Microsoft",
+    "_priceIn": null,
+    "_priceOut": null,
+    "_group": "value",
+    "_elo": 1310,
+    "composite": 55,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 73,
+      "aime": null,
+      "hle": null,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 72,
+      "swePro": null,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 68
+    }
+  },
+  "GPT-5.4": {
+    "scores": {
+      "expert_reasoning": 92.8,
+      "abstract_reasoning": 62.7,
+      "execution": 57.7
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "hle": "cross-verified",
+      "arcAgi2": "cross-verified",
+      "swePro": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "OpenAI",
+    "_priceIn": 2.5,
+    "_priceOut": 15,
+    "_group": "flagship",
+    "_elo": null,
+    "composite": 55,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 92.8,
+      "aime": null,
+      "hle": 52.1,
+      "arcAgi2": 73.3,
+      "metacog": null,
+      "sweV": null,
+      "swePro": 57.7,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": null
+    }
+  },
+  "K-EXAONE": {
+    "scores": {
+      "knowledge": 76.9,
+      "expert_reasoning": 80.4,
+      "execution": 49.4
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "LG AI Research",
+    "_priceIn": 0,
+    "_priceOut": 0,
+    "_group": "korean",
+    "_elo": null,
+    "composite": 53.4,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": 81.8,
+      "gpqa": 75.4,
+      "aime": 85.3,
+      "hle": null,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 49.4,
+      "swePro": null,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 72
+    }
+  },
+  "Claude Sonnet 4.5": {
+    "scores": {
+      "expert_reasoning": 91.7,
+      "abstract_reasoning": 30.8,
+      "execution": 83.6
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "sweV": "cross-verified",
+      "ifeval": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "Anthropic",
+    "_priceIn": 3,
+    "_priceOut": 15,
+    "_group": "flagship",
+    "_elo": 1440,
+    "composite": 53.2,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 83.4,
+      "aime": 100,
+      "hle": 30.8,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 77.2,
+      "swePro": null,
+      "ifeval": 90,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": null
+    }
+  },
+  "Claude Haiku 4.5": {
+    "scores": {
+      "knowledge": 71.5,
+      "expert_reasoning": 75,
+      "execution": 56.2
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "Anthropic",
+    "_priceIn": 1,
+    "_priceOut": 5,
+    "_group": "flagship",
+    "_elo": 1350,
+    "composite": 52.3,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": 72,
+      "gpqa": 75,
+      "aime": null,
+      "hle": null,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 68,
+      "swePro": 14,
+      "ifeval": 86.5,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 71
+    }
+  },
+  "Qwen3.5-27B": {
+    "scores": {
+      "knowledge": 83.1,
+      "expert_reasoning": 85.5,
+      "abstract_reasoning": 18,
+      "execution": 46.2
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "hle": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Alibaba",
+    "_priceIn": null,
+    "_priceOut": null,
+    "_group": "qwen",
+    "_elo": 1395,
+    "composite": 52.1,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": 86.1,
+      "gpqa": 85.5,
+      "aime": null,
+      "hle": 18,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 72.4,
+      "swePro": 20,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 80
+    }
+  },
+  "GPT-OSS-120B": {
+    "scores": {
+      "knowledge": 81,
+      "expert_reasoning": 89.4,
+      "abstract_reasoning": 12,
+      "metacognition": 60.4,
+      "execution": 16.2
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "OpenAI",
+    "_priceIn": 0,
+    "_priceOut": 0,
+    "_group": "gptoss",
+    "_elo": 1380,
+    "composite": 51.8,
+    "coverage": 100,
+    "_raw": {
+      "mmluPro": 90,
+      "gpqa": 80.9,
+      "aime": 97.9,
+      "hle": 12,
+      "arcAgi2": null,
+      "metacog": 60.42,
+      "sweV": null,
+      "swePro": 16.2,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 72
+    }
+  },
+  "DeepSeek R1": {
+    "scores": {
+      "knowledge": 79.5,
+      "expert_reasoning": 84.8,
+      "abstract_reasoning": 14,
+      "execution": 50.2
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "DeepSeek",
+    "_priceIn": 0.55,
+    "_priceOut": 2.19,
+    "_group": "value",
+    "_elo": 1440,
+    "composite": 51.1,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": 85,
+      "gpqa": 82,
+      "aime": 87.5,
+      "hle": 14,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 49.2,
+      "swePro": 18,
+      "ifeval": 83.3,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 74
+    }
+  },
+  "Llama 4 Maverick": {
+    "scores": {
+      "knowledge": 77.3,
+      "expert_reasoning": 75.9,
+      "abstract_reasoning": 18,
+      "execution": 56.1
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "sweV": "cross-verified",
+      "mmluPro": "single-source",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Meta",
+    "_priceIn": 0.22,
+    "_priceOut": 0.88,
+    "_group": "flagship",
+    "_elo": 1390,
+    "composite": 50.8,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": 80.5,
+      "gpqa": 69.8,
+      "aime": 82,
+      "hle": 18,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 73,
+      "swePro": 12.3,
+      "ifeval": 83,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 74
+    }
+  },
+  "Grok 4.1 Fast": {
+    "scores": {
+      "knowledge": 72,
+      "expert_reasoning": 86.7
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "mmmlu": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "xAI",
+    "_priceIn": 0.2,
+    "_priceOut": 0.8,
+    "_group": "flagship",
+    "_elo": 1380,
+    "composite": 50.2,
+    "coverage": 40,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 85.3,
+      "aime": 88,
+      "hle": null,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": null,
+      "swePro": null,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 72
+    }
+  },
+  "Qwen3.5-35B": {
+    "scores": {
+      "knowledge": 78,
+      "expert_reasoning": 83,
+      "abstract_reasoning": 15,
+      "execution": 43
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "hle": "cross-verified",
+      "sweV": "cross-verified",
+      "swePro": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Alibaba",
+    "_priceIn": 0.1,
+    "_priceOut": 0.4,
+    "_group": "qwen",
+    "_elo": 1380,
+    "composite": 49,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 83,
+      "aime": null,
+      "hle": 15,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 68,
+      "swePro": 18,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 78
+    }
+  },
+  "GPT-5.1": {
+    "scores": {
+      "expert_reasoning": 91.1,
+      "abstract_reasoning": 21.5,
+      "execution": 74.9
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "arcAgi2": "cross-verified",
+      "sweV": "cross-verified"
+    },
+    "_type": "closed",
+    "_provider": "OpenAI",
+    "_priceIn": 1.25,
+    "_priceOut": 10,
+    "_group": "flagship",
+    "_elo": 1480,
+    "composite": 48.4,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 88.1,
+      "aime": 94,
+      "hle": 26,
+      "arcAgi2": 17,
+      "metacog": null,
+      "sweV": 74.9,
+      "swePro": null,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": null
+    }
+  },
+  "Mistral Large 3": {
+    "scores": {
+      "knowledge": 72,
+      "expert_reasoning": 80,
+      "abstract_reasoning": 11,
+      "execution": 52.7
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "sweV": "cross-verified",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Mistral",
+    "_priceIn": 2,
+    "_priceOut": 6,
+    "_group": "flagship",
+    "_elo": 1320,
+    "composite": 48.2,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 78,
+      "aime": 82,
+      "hle": 11,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 60,
+      "swePro": 12,
+      "ifeval": 86,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 72
+    }
+  },
+  "Llama 4 Scout": {
+    "scores": {
+      "knowledge": 70,
+      "expert_reasoning": 79,
+      "abstract_reasoning": 12,
+      "execution": 48.4
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "sweV": "cross-verified",
+      "swePro": "single-source",
+      "ifeval": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Meta",
+    "_priceIn": 0.11,
+    "_priceOut": 0.34,
+    "_group": "flagship",
+    "_elo": 1340,
+    "composite": 46.8,
+    "coverage": 80,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 73,
+      "aime": 85,
+      "hle": 12,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": 55,
+      "swePro": 5.2,
+      "ifeval": 85,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 70
+    }
+  },
+  "Nanbeige4.1-3B": {
+    "scores": {
+      "expert_reasoning": 83.8,
+      "abstract_reasoning": 12.6,
+      "execution": 76.9
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "hle": "cross-verified",
+      "lcb": "single-source"
+    },
+    "_type": "open",
+    "_provider": "Nanbeige",
+    "_priceIn": 0,
+    "_priceOut": 0,
+    "_group": "value",
+    "_elo": null,
+    "composite": 44.7,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": 83.8,
+      "aime": null,
+      "hle": 12.6,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": null,
+      "swePro": null,
+      "ifeval": null,
+      "lcb": 76.9,
+      "bfcl": 56.5,
+      "mmmlu": null
+    }
+  },
+  "GPT-OSS-20B": {
+    "scores": {
+      "knowledge": 76.7,
+      "expert_reasoning": 85.1,
+      "abstract_reasoning": 7
+    },
+    "confidence": {
+      "gpqa": "cross-verified",
+      "aime": "cross-verified",
+      "hle": "cross-verified",
+      "mmluPro": "single-source",
+      "mmmlu": "single-source"
+    },
+    "_type": "open",
+    "_provider": "OpenAI",
+    "_priceIn": 0,
+    "_priceOut": 0,
+    "_group": "gptoss",
+    "_elo": 1340,
+    "composite": 43.6,
+    "coverage": 60,
+    "_raw": {
+      "mmluPro": 85.3,
+      "gpqa": 71.5,
+      "aime": 98.7,
+      "hle": 7,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": null,
+      "swePro": null,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 68
+    }
+  },
+  "Qwen3.5-Flash": {
+    "scores": {
+      "knowledge": 75
+    },
+    "confidence": {
+      "mmmlu": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "Alibaba",
+    "_priceIn": 0.1,
+    "_priceOut": 0.4,
+    "_group": "qwen",
+    "_elo": null,
+    "composite": 33.5,
+    "coverage": 20,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": null,
+      "aime": null,
+      "hle": null,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": null,
+      "swePro": null,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 75
+    }
+  },
+  "A.X K1": {
+    "scores": {
+      "knowledge": 62
+    },
+    "confidence": {
+      "mmmlu": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "SK Telecom",
+    "_priceIn": 0,
+    "_priceOut": 0,
+    "_group": "korean",
+    "_elo": null,
+    "composite": 27.7,
+    "coverage": 20,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": null,
+      "aime": null,
+      "hle": null,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": null,
+      "swePro": null,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 62
+    }
+  },
+  "Motif AI": {
+    "scores": {
+      "knowledge": 55
+    },
+    "confidence": {
+      "mmmlu": "single-source"
+    },
+    "_type": "closed",
+    "_provider": "Motif Technologies",
+    "_priceIn": 0,
+    "_priceOut": 0,
+    "_group": "korean",
+    "_elo": null,
+    "composite": 24.6,
+    "coverage": 20,
+    "_raw": {
+      "mmluPro": null,
+      "gpqa": null,
+      "aime": null,
+      "hle": null,
+      "arcAgi2": null,
+      "metacog": null,
+      "sweV": null,
+      "swePro": null,
+      "ifeval": null,
+      "lcb": null,
+      "bfcl": null,
+      "mmmlu": 55
+    }
+  }
+}
