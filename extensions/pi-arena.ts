@@ -1,5 +1,5 @@
 /**
- * pi-arena v1.3.0 — Model Benchmarking & Performance Tracking
+ * pi-arena v1.4.0 — Model Benchmarking & Performance Tracking
  * 
  * Run tasks against multiple models, track results over time, detect regressions.
  * "You need to know which model is best for YOUR tasks." — Carmack lens
@@ -15,6 +15,7 @@
  * /arena stats                          → show aggregate statistics
  * /arena leaderboard                    → rank models by win rate
  * /arena axes                           → show 5-axis framework + composite scores
+ * /arena atlas                          → show SWE-Atlas Codebase QnA scores (SEAL, Mar 2026)
  * /arena export                         → export all data as JSON
  * /arena templates                      → show/manage task templates
  * 
@@ -31,6 +32,47 @@ const RUNS_FILE = join(ARENA_DIR, "runs.jsonl");
 const TEMPLATES_FILE = join(ARENA_DIR, "templates.json");
 const BASELINES_FILE = join(ARENA_DIR, "vectara-baselines.json");
 const ALLBENCH_FILE = join(ARENA_DIR, "allbench-scores.json");
+const SWEATLAS_FILE = join(ARENA_DIR, "sweatlas-scores.json");
+
+// ── SWE-Atlas Codebase QnA (SEAL, Mar 2026) ──────────────────────────
+// Source: scale.com/leaderboard/sweatlas-qna
+// 124 tasks across 11 repos (Go, Python, C, TypeScript)
+// Tests deep code comprehension: architecture (35%), root-cause (30%),
+// onboarding (23%), security (9%), API (3%)
+// Metric: Task Resolve Rate (all rubric items pass at 1.0 threshold)
+// Key insight: Top models at ~30%, proving even 80%+ SWE-Bench models
+//   struggle with deep codebase understanding
+interface SWEAtlasEntry {
+  resolveRate: number;     // % of tasks fully resolved (1.0 threshold)
+  scaffold: string;        // SWE-Agent, Claude Code, Codex CLI, etc.
+  avgSteps?: number;       // avg trajectory length
+  avgAnswerLen?: number;   // avg answer length in chars
+  _note?: string;
+}
+interface SWEAtlasData { [model: string]: SWEAtlasEntry }
+
+function loadSWEAtlas(): SWEAtlasData {
+  if (!existsSync(SWEATLAS_FILE)) {
+    // Seed with SEAL leaderboard data (Mar 2026)
+    const seed: SWEAtlasData = {
+      "GPT-5.2 High":        { resolveRate: 29.03, scaffold: "SWE-Agent", avgSteps: 120, _note: "Joint leader, aggressive codebase exploration (2x search ops vs Opus)" },
+      "Claude Opus 4.6":     { resolveRate: 29.03, scaffold: "SWE-Agent", _note: "Joint leader; 29.03% with Claude Code scaffold too" },
+      "GPT-5.3 Codex":       { resolveRate: 27.42, scaffold: "SWE-Agent", _note: "Better on native Codex CLI scaffold; command errors in long sessions" },
+      "GPT-5.2 Codex":       { resolveRate: 25.81, scaffold: "SWE-Agent" },
+      "Gemini 3.1 Pro":      { resolveRate: 24.19, scaffold: "SWE-Agent" },
+      "Claude Sonnet 4.5":   { resolveRate: 22.58, scaffold: "SWE-Agent" },
+      "Gemini 3 Flash":      { resolveRate: 19.35, scaffold: "SWE-Agent" },
+      "GLM-5":               { resolveRate: 17.74, scaffold: "SWE-Agent", _note: "Top open model" },
+      "Kimi K2.5":           { resolveRate: 14.52, scaffold: "SWE-Agent" },
+      "MiniMax M2.5":        { resolveRate: 12.90, scaffold: "SWE-Agent" },
+      "Qwen3 Coder 480B":    { resolveRate: 11.29, scaffold: "SWE-Agent" },
+    };
+    ensureDir();
+    writeFileSync(SWEATLAS_FILE, JSON.stringify(seed, null, 2));
+    return seed;
+  }
+  try { return JSON.parse(readFileSync(SWEATLAS_FILE, "utf-8")); } catch { return {}; }
+}
 
 // ── ALL Bench 5-Axis Intelligence Framework (FINAL-Bench, Mar 2026) ──
 // Source: huggingface.co/datasets/FINAL-Bench/ALL-Bench-Leaderboard
@@ -42,7 +84,7 @@ const AXIS_BENCHMARKS: Record<AxisName, { label: string; benchmarks: string[]; d
   expert_reasoning: { label: "Expert Reasoning", benchmarks: ["GPQA Diamond", "AIME", "HLE"], desc: "PhD-level scientific reasoning, math olympiad" },
   abstract_reasoning: { label: "Abstract Reasoning", benchmarks: ["ARC-AGI-2"], desc: "Novel pattern recognition absent from training data" },
   metacognition: { label: "Metacognition", benchmarks: ["FINAL Bench"], desc: "Self-error recognition and correction (biggest differentiator)" },
-  execution: { label: "Execution", benchmarks: ["SWE-Pro", "BFCL", "IFEval", "LCB"], desc: "Code gen, function calling, instruction following" },
+  execution: { label: "Execution", benchmarks: ["SWE-Pro", "SWE-Atlas", "BFCL", "IFEval", "LCB"], desc: "Code gen, codebase comprehension, function calling, instruction following" },
 };
 
 interface AllBenchScores {
@@ -422,6 +464,24 @@ export default function (pi: ExtensionAPI) {
         } catch (e: any) {
           return `${RED}Failed to refresh:${RST} ${e.message}`;
         }
+      }
+
+      if (cmd === "atlas" || cmd === "sweatlas") {
+        const atlas = loadSWEAtlas();
+        const models = Object.entries(atlas).sort((a, b) => b[1].resolveRate - a[1].resolveRate);
+        let out = `${B}${CYAN}🗺️ SWE-Atlas: Codebase QnA (SEAL, Mar 2026)${RST}\n`;
+        out += `${D}124 tasks • 11 repos • Go/Python/C/TypeScript${RST}\n`;
+        out += `${D}Tests: Architecture (35%), Root-cause (30%), Onboarding (23%), Security (9%), API (3%)${RST}\n`;
+        out += `${D}Key insight: Even 80%+ SWE-Bench models score <30% on deep code comprehension${RST}\n\n`;
+        out += `  ${"#".padStart(3)} ${"Model".padEnd(28)} ${"Resolve%".padStart(10)} ${"Scaffold".padEnd(14)} Notes\n`;
+        out += `  ${"─".repeat(90)}\n`;
+        models.forEach(([name, data], i) => {
+          const color = data.resolveRate >= 25 ? GREEN : data.resolveRate >= 18 ? YELLOW : RED;
+          out += `  ${String(i + 1).padStart(3)} ${name.padEnd(28)} ${color}${String(data.resolveRate.toFixed(1) + "%").padStart(10)}${RST} ${data.scaffold.padEnd(14)} ${D}${data._note || ""}${RST}\n`;
+        });
+        out += `\n${D}Non-agentic (no bash): GPT-5.2 Codex 17.7% (↓40%), Opus 4.6 16.1% (↓45%) — tools are essential${RST}\n`;
+        out += `${D}Source: scale.com/leaderboard/sweatlas-qna${RST}`;
+        return out;
       }
 
       if (cmd === "templates") {
