@@ -230,7 +230,7 @@ export default function (pi: ExtensionAPI) {
   ensureDir();
 
   pi.registerCommand("arena", {
-    description: "Benchmarking: /arena run|history|compare|stats|axes|leaderboard|baselines|export|templates",
+    description: "Benchmarking: /arena run|history|compare|stats|axes|leaderboard|baselines|refresh|export|templates",
     handler: async (args, ctx) => {
       const parts = (args || "").trim().split(/\s+/);
       const cmd = parts[0] || "stats";
@@ -355,6 +355,73 @@ export default function (pi: ExtensionAPI) {
           out += `  ${medal.padEnd(5)} ${model.padEnd(25)} ${String(s.avgScore).padEnd(8)} ${String(s.passRate + "%").padEnd(8)} ${String(s.avgDuration).padEnd(10)} ${s.runs}\n`;
         }
         return out;
+      }
+
+      if (cmd === "refresh" || cmd === "fetch") {
+        ctx.ui.notify("Fetching ALL Bench v2.1 from HuggingFace...", "info");
+        try {
+          const https = await import("node:https");
+          const fetchHF = (url: string): Promise<string> => new Promise((resolve, reject) => {
+            https.get(url, { headers: { "User-Agent": "pi-arena/1.3.0" } }, (res: any) => {
+              if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                const redir = res.headers.location.startsWith("http") ? res.headers.location : "https://huggingface.co" + res.headers.location;
+                return fetchHF(redir).then(resolve).catch(reject);
+              }
+              let data = "";
+              res.on("data", (c: string) => data += c);
+              res.on("end", () => resolve(data));
+            }).on("error", reject);
+          });
+          
+          const raw = await fetchHF("https://huggingface.co/datasets/FINAL-Bench/ALL-Bench-Leaderboard/resolve/main/all_bench_leaderboard_v2.1.json");
+          const hfData = JSON.parse(raw);
+          const existing = loadAllBench();
+          let added = 0, updated = 0;
+          
+          for (const entry of hfData.llm || []) {
+            const scores: Record<string, number> = {};
+            // 5-axis mapping
+            const axisMap: Record<string, {keys: string[], weights: number[]}> = {
+              knowledge: { keys: ["mmluPro", "mmmlu"], weights: [0.5, 0.5] },
+              expert_reasoning: { keys: ["gpqa", "aime"], weights: [0.5, 0.5] },
+              abstract_reasoning: { keys: ["arcAgi2", "hle"], weights: [0.5, 0.5] },
+              metacognition: { keys: ["metacog"], weights: [1] },
+              execution: { keys: ["sweV", "swePro", "lcb", "ifeval"], weights: [0.25, 0.25, 0.25, 0.25] },
+            };
+            for (const [axis, { keys, weights }] of Object.entries(axisMap)) {
+              let sum = 0, tw = 0;
+              keys.forEach((k, i) => { if (entry[k] != null) { sum += entry[k] * weights[i]; tw += weights[i]; } });
+              if (tw > 0) scores[axis] = Math.round((sum / tw) * 10) / 10;
+            }
+            if (!Object.keys(scores).length) continue;
+            
+            const vals = Object.values(scores);
+            const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
+            const coverage = Math.round((Object.keys(scores).length / 5) * 100);
+            const composite = Math.round(avg * Math.sqrt(Object.keys(scores).length / 5) * 10) / 10;
+            
+            const record: any = {
+              scores, composite, coverage,
+              _type: entry.type, _provider: entry.provider,
+              _priceIn: entry.priceIn, _priceOut: entry.priceOut,
+              _elo: entry.elo,
+              _raw: { mmluPro: entry.mmluPro, gpqa: entry.gpqa, aime: entry.aime, hle: entry.hle, arcAgi2: entry.arcAgi2, metacog: entry.metacog, sweV: entry.sweV, swePro: entry.swePro, ifeval: entry.ifeval, lcb: entry.lcb, mmmlu: entry.mmmlu },
+            };
+            if (existing[entry.name]?._note) record._note = existing[entry.name]._note;
+            existing[entry.name] ? updated++ : added++;
+            existing[entry.name] = record;
+          }
+          
+          const sorted = Object.fromEntries(Object.entries(existing).sort((a, b) => ((b[1] as any).composite || 0) - ((a[1] as any).composite || 0)));
+          writeFileSync(join(ARENA_DIR, "allbench-scores.json"), JSON.stringify(sorted, null, 2));
+          
+          return `${GREEN}✅ ALL Bench refreshed from HuggingFace${RST}\n` +
+            `  ${Object.keys(sorted).length} models total (${added} new, ${updated} updated)\n` +
+            `  Source: FINAL-Bench/ALL-Bench-Leaderboard v2.1\n` +
+            `  Top 3: ${Object.entries(sorted).slice(0, 3).map(([n, d]: any) => `${n} (${d.composite})`).join(", ")}`;
+        } catch (e: any) {
+          return `${RED}Failed to refresh:${RST} ${e.message}`;
+        }
       }
 
       if (cmd === "templates") {
